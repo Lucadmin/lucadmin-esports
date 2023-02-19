@@ -1,5 +1,5 @@
-"use client"
-import React, {useEffect, useState} from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 
@@ -65,14 +65,14 @@ const ButtonDiv = styled.div`
  * @constructor - React component
  */
 function LameButton({
-                      children,
-                      clicked,
-                      onClick,
-                      pressedWidgets,
-                      pressedStateInactive,
-                      color,
-                      classname
-                    }) {
+  children,
+  clicked,
+  onClick,
+  pressedWidgets,
+  pressedStateInactive,
+  color,
+  classname,
+}) {
   const [buttonClicked, setButtonClicked] = useState(clicked);
 
   const widgetsOnPressed = !pressedWidgets ? children : pressedWidgets;
@@ -82,32 +82,31 @@ function LameButton({
   }, [clicked]);
 
   return (
-      <ButtonDiv
-          className={classname}
-          color={color}
-          clicked={buttonClicked && !pressedStateInactive}
-          style={
-            buttonClicked && !pressedStateInactive
-                ? {backgroundColor: "#302673"}
-                : {}
-          }
-          onClick={() => {
-            onClick();
-            setButtonClicked(!buttonClicked);
-          }}
-          onMouseOver={() => {
-          }}
+    <ButtonDiv
+      className={classname}
+      color={color}
+      clicked={buttonClicked && !pressedStateInactive}
+      style={
+        buttonClicked && !pressedStateInactive
+          ? { backgroundColor: "#302673" }
+          : {}
+      }
+      onClick={() => {
+        onClick();
+        setButtonClicked(!buttonClicked);
+      }}
+      onMouseOver={() => {}}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+        }}
       >
-        <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-        >
-          {buttonClicked && !pressedStateInactive ? widgetsOnPressed : children}
-        </div>
-      </ButtonDiv>
+        {buttonClicked && !pressedStateInactive ? widgetsOnPressed : children}
+      </div>
+    </ButtonDiv>
   );
 }
 

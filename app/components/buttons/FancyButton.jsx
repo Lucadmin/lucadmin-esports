@@ -1,5 +1,5 @@
-"use client"
-import React, {useEffect, useState} from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 
@@ -142,16 +142,16 @@ const LoadingButtonDiv = styled(ButtonDiv)`
  * @constructor - React component
  */
 function FancyButton({
-                       children,
-                       clicked,
-                       onClick,
-                       pressedWidgets,
-                       pressedStateInactive,
-                       color,
-                       loading,
-                       clickedColor,
-                       className
-                     }) {
+  children,
+  clicked,
+  onClick,
+  pressedWidgets,
+  pressedStateInactive,
+  color,
+  loading,
+  clickedColor,
+  className,
+}) {
   const [buttonClicked, setButtonClicked] = useState(clicked);
 
   const widgetsOnPressed = !pressedWidgets ? children : pressedWidgets;
@@ -161,41 +161,40 @@ function FancyButton({
   }, [clicked]);
 
   return (
-      <LoadingButtonDiv
-          color={color}
-          clicked={(buttonClicked && !pressedStateInactive) || loading}
-          loader={loading}
-          className={(loading ? "loading" : "") + " " + className}
-          style={
-            (buttonClicked && !pressedStateInactive) || loading
-                ? {
-                  backgroundColor: clickedColor || "#302673",
-                }
-                : {}
-          }
-          onClick={() => {
-            if (!loading) {
-              onClick();
-              setButtonClicked(!buttonClicked);
+    <LoadingButtonDiv
+      color={color}
+      clicked={(buttonClicked && !pressedStateInactive) || loading}
+      loader={loading}
+      className={(loading ? "loading" : "") + " " + className}
+      style={
+        (buttonClicked && !pressedStateInactive) || loading
+          ? {
+              backgroundColor: clickedColor || "#302673",
             }
-          }}
-          onMouseOver={() => {
-          }}
+          : {}
+      }
+      onClick={() => {
+        if (!loading) {
+          onClick();
+          setButtonClicked(!buttonClicked);
+        }
+      }}
+      onMouseOver={() => {}}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+        }}
       >
-        <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-        >
-          {buttonClicked && !pressedStateInactive ? widgetsOnPressed : children}
-        </div>
-        <StrokeOne className="stroke-one"/>
-        <StrokeTwo/>
-        <StrokeThree className="stroke-three"/>
-        <StrokeFour/>{" "}
-      </LoadingButtonDiv>
+        {buttonClicked && !pressedStateInactive ? widgetsOnPressed : children}
+      </div>
+      <StrokeOne className="stroke-one" />
+      <StrokeTwo />
+      <StrokeThree className="stroke-three" />
+      <StrokeFour />{" "}
+    </LoadingButtonDiv>
   );
 }
 

@@ -1,27 +1,24 @@
-"use client"
+"use client";
 
-import React, {useEffect} from 'react';
+import React, { useEffect } from "react";
 
 const Printer = () => {
-
   useEffect(() => {
-    console.log("\n" +
+    console.log(
+      "\n" +
         "██╗     ██╗   ██╗ ██████╗ █████╗ ██████╗ ███╗   ███╗██╗███╗   ██╗\n" +
         "██║     ██║   ██║██╔════╝██╔══██╗██╔══██╗████╗ ████║██║████╗  ██║\n" +
         "██║     ██║   ██║██║     ███████║██║  ██║██╔████╔██║██║██╔██╗ ██║\n" +
         "██║     ██║   ██║██║     ██╔══██║██║  ██║██║╚██╔╝██║██║██║╚██╗██║\n" +
         "███████╗╚██████╔╝╚██████╗██║  ██║██████╔╝██║ ╚═╝ ██║██║██║ ╚████║\n" +
         "╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝\n" +
-        "                                                        \n")
-  }, [])
+        "                                                        \n"
+    );
+  }, []);
 
-  console.log("Welcome to the console at lucadmin.de")
+  console.log("Welcome to the console at lucadmin.de");
 
-  return (
-      <div>
-
-      </div>
-  );
+  return <div></div>;
 };
 
 export default Printer;

@@ -1,15 +1,14 @@
-@use 'sass:map';
-@use './custom-theme';
-@use '@carbon/react/scss/themes';
-@use '@carbon/react/scss/theme' with (
+@use "sass:map";
+@use "./custom-theme";
+@use "@carbon/react/scss/themes";
+@use "@carbon/react/scss/theme" with (
   $theme: map.merge(themes.$g100, custom-theme.$theme)
 );
-@use '@carbon/react';
+@use "@carbon/react";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 :root {
   font-size: 14px;
