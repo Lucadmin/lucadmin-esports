@@ -175,7 +175,7 @@ function FancyButton({
       }
       onClick={() => {
         if (!loading) {
-          onClick();
+          if (onClick) onClick();
           setButtonClicked(!buttonClicked);
         }
       }}

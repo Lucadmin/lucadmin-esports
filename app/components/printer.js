@@ -14,9 +14,8 @@ const Printer = () => {
         "╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝\n" +
         "                                                        \n"
     );
+    console.log("Welcome to the console at lucadmin.de");
   }, []);
-
-  console.log("Welcome to the console at lucadmin.de");
 
   return <div></div>;
 };

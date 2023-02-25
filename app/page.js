@@ -14,6 +14,7 @@ import LandingPageForm from "@/app/components/forms/landing-form";
 import FancyButton from "@/app/components/buttons/FancyButton";
 import { ArrowDown } from "@carbon/react/icons";
 import KeyWordAnimation from "@/app/typography/keyword-animation";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -66,7 +67,9 @@ export default function Home() {
               everything we do. Join us on our journey to become a leading force
               in the esports industry.
             </p>
-            <FancyButton className={"max-w-fit"}>More about us</FancyButton>
+            <Link href={"/about-us"}>
+              <FancyButton className={"max-w-fit"}>More about us</FancyButton>
+            </Link>
           </div>
         </div>
       </section>
@@ -89,7 +92,9 @@ export default function Home() {
               let us know why you're the perfect fit for our team. Apply now and
               let's make history together.
             </p>
-            <FancyButton className={"max-w-fit"}>Join us now</FancyButton>
+            <Link href={"https://form.jotform.com/221585905935061"}>
+              <FancyButton className={"max-w-fit"}>Join us now</FancyButton>
+            </Link>
           </div>
           <div
             className={
@@ -98,7 +103,7 @@ export default function Home() {
           >
             <div
               className={
-                "col-span-2 col-start-4 row-start-2 flex h-full w-full sm:col-span-1 sm:col-start-1 sm:row-span-2"
+                "col-span-2 col-start-4 row-start-2 flex h-full w-full sm:col-span-1 sm:col-start-1 sm:row-span-2 sm:row-start-2"
               }
             >
               <Image
