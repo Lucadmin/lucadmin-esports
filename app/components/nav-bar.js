@@ -9,15 +9,16 @@ import { Menu } from "@carbon/react/icons";
 const NavBar = () => {
   const [scrollPosition, setScrollPosition] = useState({ before: 0, diff: 0 });
   const [position, setPosition] = useState(0);
-  const handleScroll = () => {
-    setPosition(window.pageYOffset);
+
+  const handleScroll = ({ target }) => {
+    setPosition(document.body.scrollTop);
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    document.body.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      document.body.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -26,6 +27,8 @@ const NavBar = () => {
       before: position,
       diff: scrollPosition.before - position,
     });
+    // Doenst work anymore if I add scrollPosition.diff to the dependency array
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [position]);
 
   return (
