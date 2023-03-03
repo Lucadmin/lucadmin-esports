@@ -12,9 +12,9 @@ import { majorelleBlue } from "@/utils/colors";
 import Subtitle1 from "@/app/components/typography/Subtitle1";
 import LandingPageForm from "@/app/components/forms/landing-form";
 import FancyButton from "@/app/components/buttons/FancyButton";
-import { ArrowDown } from "@carbon/react/icons";
 import KeyWordAnimation from "@/app/typography/keyword-animation";
 import Link from "next/link";
+import ScrollingArrowButton from "@/app/components/buttons/ScrollingArrowButton";
 
 export default function Home() {
   return (
@@ -28,7 +28,9 @@ export default function Home() {
           <Image
             src={backgroundImage}
             fill
-            className={"object-cover object-center mix-blend-overlay"}
+            className={
+              "select-none object-cover object-center mix-blend-overlay"
+            }
           />
         </div>
         <div className={"z-10 flex flex-col gap-5 text-center"}>
@@ -39,16 +41,14 @@ export default function Home() {
             </H2>
           </div>
         </div>
-        <div className={"absolute bottom-0 m-5 flex w-full justify-center"}>
-          <ArrowDown />
-        </div>
+        <ScrollingArrowButton />
       </section>
       <section className={"relative px-10"}>
         <div className={"absolute top-0 left-0 -z-10 h-full w-screen"}>
           <Image
             src={backgroundPatternWelcome}
             fill
-            className={"object-cover object-center"}
+            className={"select-none object-cover object-center"}
           />
         </div>
         <div className={"flex flex-col justify-center md:flex-row md:gap-16"}>
