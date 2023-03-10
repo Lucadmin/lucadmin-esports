@@ -15,6 +15,7 @@ import FancyButton from "@/app/components/buttons/FancyButton";
 import KeyWordAnimation from "@/app/typography/keyword-animation";
 import Link from "next/link";
 import ScrollingArrowButton from "@/app/components/buttons/ScrollingArrowButton";
+import BackgroundPlayer from "@/app/components/background-player";
 
 export default function Home() {
   return (
@@ -22,14 +23,38 @@ export default function Home() {
       <section className="relative flex min-h-screen flex-col items-center justify-center py-2">
         <div
           className={
-            "absolute top-0 left-0 -z-10 h-screen w-screen mix-blend-overlay"
+            "video-background absolute top-0 left-0 -z-10 h-screen w-screen overflow-hidden"
           }
         >
-          <Image
+          {/*<Image
             src={backgroundImage}
             fill
+            className={"select-none object-cover object-center brightness-50"}
+            />*/}
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/5c-sfYfuu-0?controls=0&autoplay=1&mute=1&loop=1&start=5&end=60&modestbranding=1&playlist=5c-sfYfuu-0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
             className={
-              "select-none object-cover object-center mix-blend-overlay"
+              "absolute top-1/2 left-1/2 aspect-video aspect-video h-screen w-screen -translate-x-1/2 -translate-y-1/2 select-none object-cover brightness-50"
+            }
+          ></iframe>
+          {/*<BackgroundPlayer videoId={"5c-sfYfuu-0"} />*/}
+          {/*<video
+            autoPlay
+            muted
+            loop
+            className={"h-full w-full object-cover brightness-50"}
+          >
+            <source src={"/videos/background_landing.webm"} type="video/webm" />
+          </video>*/}
+          <div
+            className={
+              "absolute top-0 left-0 h-screen w-screen bg-majorelleBlue mix-blend-overlay"
             }
           />
         </div>

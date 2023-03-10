@@ -27,3 +27,17 @@ body {
   overflow-x: hidden;
   font-size: clamp(1rem, 0.23vw + 0.94rem, 1.14rem);
 }
+
+@media (min-aspect-ratio: 16/9) {
+  .video-background iframe {
+    /* height = 100 * (9 / 16) = 56.25 */
+    height: 56.25vw;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video-background iframe {
+    /* width = 100 / (9 / 16) = 177.777777 */
+    width: 177.78vh;
+  }
+}

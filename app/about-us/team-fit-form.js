@@ -16,20 +16,22 @@ const TeamFitForm = () => {
     dedication: false,
   });
 
+  let goodFit =
+    checkedBoxes.atLeast16 &&
+    checkedBoxes.available &&
+    checkedBoxes.immortal &&
+    checkedBoxes.experience;
+  let perfectFit =
+    goodFit &&
+    checkedBoxes.motivated &&
+    checkedBoxes.teamSuccess &&
+    checkedBoxes.criticism &&
+    checkedBoxes.dedication;
+
   // Returns no if no boxes are checked, return GOOD if all requirements are checked, return PERFECT if all requirements and additional are checked
   function getFitStatement() {
-    if (
-      checkedBoxes.atLeast16 &&
-      checkedBoxes.available &&
-      checkedBoxes.immortal &&
-      checkedBoxes.experience
-    ) {
-      if (
-        checkedBoxes.motivated &&
-        checkedBoxes.teamSuccess &&
-        checkedBoxes.criticism &&
-        checkedBoxes.dedication
-      ) {
+    if (goodFit) {
+      if (perfectFit) {
         return <span className={"font-bold text-majorelleBlue"}>PERFECT</span>;
       }
       return <span className={"text-majorelleBlue"}>GOOD</span>;
@@ -131,7 +133,9 @@ const TeamFitForm = () => {
             Check off all the boxes of the “I am”-statements to see if you are a
             good fit for Lucadmin eSports
           </p>
-          <H5>I am a {getFitStatement()} fit for Lucadmin eSports</H5>
+          <H5>
+            I am {goodFit && "a"} {getFitStatement()} fit for Lucadmin eSports
+          </H5>
           <FancyButton
             clicked={
               !(
@@ -141,6 +145,11 @@ const TeamFitForm = () => {
                 checkedBoxes.experience
               )
             }
+            onClick={() => {
+              window
+                .open("https://form.jotform.com/221585905935061", "_blank")
+                .focus();
+            }}
           >
             Apply now
           </FancyButton>
