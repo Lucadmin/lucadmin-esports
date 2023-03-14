@@ -3,6 +3,8 @@ import NavBar from "@/app/components/nav-bar";
 import { Fira_Sans, Montserrat } from "@next/font/google";
 import Footer from "@/app/components/footer";
 import Printer from "@/app/components/printer";
+import { Suspense } from "react";
+import IndexLoadingScreen from "@/app/loading";
 
 const montserrat = Montserrat({
   subsets: ["latin"],

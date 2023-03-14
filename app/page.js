@@ -16,6 +16,7 @@ import KeyWordAnimation from "@/app/typography/keyword-animation";
 import Link from "next/link";
 import ScrollingArrowButton from "@/app/components/buttons/ScrollingArrowButton";
 import BackgroundPlayer from "@/app/components/background-player";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -31,7 +32,7 @@ export default function Home() {
             fill
             className={"select-none object-cover object-center brightness-50"}
             />*/}
-          <iframe
+          {/*<iframe
             width="560"
             height="315"
             src="https://www.youtube-nocookie.com/embed/5c-sfYfuu-0?controls=0&autoplay=1&mute=1&loop=1&start=5&end=60&modestbranding=1&playlist=5c-sfYfuu-0"
@@ -42,16 +43,17 @@ export default function Home() {
             className={
               "absolute top-1/2 left-1/2 aspect-video aspect-video h-screen w-screen -translate-x-1/2 -translate-y-1/2 select-none object-cover brightness-50"
             }
-          ></iframe>
+          ></iframe>*/}
           {/*<BackgroundPlayer videoId={"5c-sfYfuu-0"} />*/}
-          {/*<video
-            autoPlay
+          <video
+            autoplay
             muted
             loop
+            playsinline
             className={"h-full w-full object-cover brightness-50"}
           >
             <source src={"/videos/background_landing.webm"} type="video/webm" />
-          </video>*/}
+          </video>
           <div
             className={
               "absolute top-0 left-0 h-screen w-screen bg-majorelleBlue mix-blend-overlay"
@@ -135,6 +137,7 @@ export default function Home() {
                 src={deskKeyboard}
                 alt={"desk with gaming keyboard"}
                 className={"object-cover object-center mix-blend-screen"}
+                placeholder="blur"
               />
             </div>
             <div
@@ -148,6 +151,7 @@ export default function Home() {
                 className={
                   "aspect-[10/3] object-cover object-center mix-blend-screen"
                 }
+                placeholder="blur"
               />
             </div>
             <div
@@ -159,6 +163,7 @@ export default function Home() {
                 src={concentratedGamer}
                 alt={"gamer concentrating on the game"}
                 className={"object-cover object-center mix-blend-screen"}
+                placeholder="blur"
               />
             </div>
           </div>
