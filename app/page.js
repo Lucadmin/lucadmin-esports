@@ -46,13 +46,16 @@ export default function Home() {
           ></iframe>*/}
           {/*<BackgroundPlayer videoId={"5c-sfYfuu-0"} />*/}
           <video
-            autoplay
+            autoPlay
             muted
             loop
-            playsinline
+            playsInline
             className={"h-full w-full object-cover brightness-50"}
           >
-            <source src={"/videos/background_landing.webm"} type="video/webm" />
+            <source
+              src={"https://d36jtmifh5axiy.cloudfront.net/videoplayback.webm"}
+              type="video/webm"
+            />
           </video>
           <div
             className={
