@@ -79,11 +79,12 @@ export default function Home() {
             src={backgroundPatternWelcome}
             fill
             className={"select-none object-cover object-center"}
+            alt={""}
           />
         </div>
         <div className={"flex flex-col justify-center md:flex-row md:gap-16"}>
           <div className={"w-full sm:p-10"}>
-            <Image src={lucadminLogoValoFilled} />
+            <Image src={lucadminLogoValoFilled} alt={"Lucadmin Logo Artwork"} />
           </div>
           <div className={"flex w-full flex-col justify-center gap-5 sm:p-10"}>
             <H2 className={"text-majorelleBlue"} variant={"h1"}>

@@ -3,8 +3,8 @@ import NavBar from "@/app/components/nav-bar";
 import { Fira_Sans, Montserrat } from "@next/font/google";
 import Footer from "@/app/components/footer";
 import Printer from "@/app/components/printer";
-import { Suspense } from "react";
-import IndexLoadingScreen from "@/app/loading";
+import MobileMenu from "@/app/components/mobile-menu";
+import NavigationControls from "@/app/components/navigation-controls";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -16,13 +16,14 @@ const firaSans = Fira_Sans({
   variable: "--firaSans-font",
 });
 
-export default function RootLayout({ children }) {
+export default function RootLayout(props) {
+  const { children } = props;
   return (
     <html lang="en" className={`${montserrat.variable} ${firaSans.variable}`}>
       <head />
-      <body className="bg-xiketic font-firaSans text-white">
+      <body className="relative bg-xiketic font-firaSans text-white">
         <Printer />
-        <NavBar />
+        <NavigationControls />
         <div className={"min-h-screen"}>{children}</div>
         <Footer />
       </body>

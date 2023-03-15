@@ -6,7 +6,7 @@ import logoSrc from "@/app/images/logo.svg";
 import Link from "next/link";
 import { Menu } from "@carbon/react/icons";
 
-const NavBar = () => {
+const NavBar = ({ setIsOpen }) => {
   const [scrollPosition, setScrollPosition] = useState({ before: 0, diff: 0 });
   const [position, setPosition] = useState(0);
 
@@ -70,7 +70,7 @@ const NavBar = () => {
           Apply now
         </LameButton>
       </div>
-      <div className={"flex sm:hidden"}>
+      <div className={"flex sm:hidden"} onClick={() => setIsOpen(true)}>
         <Menu className={"h-10 w-10"} />
       </div>
     </nav>
