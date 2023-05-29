@@ -52,7 +52,7 @@ export default function Home() {
             poster={backgroundImage}
           >
             <source
-              data-src={
+              src={
                 "https://d36jtmifh5axiy.cloudfront.net/backgroundvideo_improved.mp4"
               }
               type="video/mp4"
