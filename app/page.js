@@ -55,7 +55,7 @@ export default function Home() {
               data-src={
                 "https://d36jtmifh5axiy.cloudfront.net/backgroundvideo_improved.mp4"
               }
-              type="video/webm"
+              type="video/mp4"
             />
           </video>
           +
