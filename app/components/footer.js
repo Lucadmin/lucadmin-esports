@@ -5,6 +5,7 @@ import logoSrc from "@/app/images/logo.svg";
 import H4 from "@/app/components/typography/h4";
 import H3 from "@/app/components/typography/h3";
 import { Email, LogoTwitter } from "@carbon/react/icons";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -23,11 +24,13 @@ const Footer = () => {
           }
         >
           <div className={"flex flex-row flex-wrap items-center gap-4"}>
-            <Image
-              src={logoSrc}
-              alt={"Lucadmin logo"}
-              className={"h-32 w-32"}
-            />
+            <Link href={"/"}>
+              <Image
+                src={logoSrc}
+                alt={"Lucadmin logo"}
+                className={"h-32 w-32"}
+              />
+            </Link>
             <H4>
               Lucadmin
               <br />
@@ -42,17 +45,31 @@ const Footer = () => {
         <div className={"order-1 sm:order-2"}>
           <H3 className={"mb-4 text-majorelleBlue"}>eSports</H3>
           <ul className={"list-inside list-none"}>
-            <li>Home</li>
-            <li>About us</li>
-            <li>team</li>
-            <li>Application form</li>
+            <li>
+              <Link href={"/"}>Home</Link>
+            </li>
+            <li>
+              <Link href={"/about-us"}>About us</Link>
+            </li>
+            <li>
+              <Link href={"/team"}>Team</Link>
+            </li>
+            <li>
+              <Link href={"https://form.jotform.com/221585905935061"}>
+                Application form
+              </Link>
+            </li>
           </ul>
         </div>
         <div className={"order-2 sm:order-3"}>
           <H3 className={"mb-4 text-majorelleBlue"}>Business & Legal</H3>
           <ul className={"list-inside list-none"}>
-            <li>Bootstrapping an eSports team</li>
-            <li>Impress</li>
+            <li>
+              <Link href={"/baet"}>Bootstrapping an eSports team</Link>
+            </li>
+            <li>
+              <Link href={"/impress"}>Impress</Link>
+            </li>
           </ul>
         </div>
         <div className={"order-3 sm:order-4"}>

@@ -15,8 +15,6 @@ import FancyButton from "@/app/components/buttons/FancyButton";
 import KeyWordAnimation from "@/app/typography/keyword-animation";
 import Link from "next/link";
 import ScrollingArrowButton from "@/app/components/buttons/ScrollingArrowButton";
-import BackgroundPlayer from "@/app/components/background-player";
-import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -51,12 +49,16 @@ export default function Home() {
             loop
             playsInline
             className={"h-full w-full object-cover brightness-50"}
+            poster={backgroundImage}
           >
             <source
-              src={"https://d36jtmifh5axiy.cloudfront.net/videoplayback.webm"}
+              data-src={
+                "https://d36jtmifh5axiy.cloudfront.net/backgroundvideo_improved.mp4"
+              }
               type="video/webm"
             />
           </video>
+          +
           <div
             className={
               "absolute top-0 left-0 h-screen w-screen bg-majorelleBlue mix-blend-overlay"
@@ -72,6 +74,9 @@ export default function Home() {
           </div>
         </div>
         <ScrollingArrowButton />
+        <div className={"absolute bottom-0 right-0 text-xs"}>
+          Video by Zischu
+        </div>
       </section>
       <section className={"relative px-10"}>
         <div className={"absolute top-0 left-0 -z-10 h-full w-screen"}>

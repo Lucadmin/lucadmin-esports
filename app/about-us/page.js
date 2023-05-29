@@ -11,7 +11,7 @@ import TeamFitForm from "@/app/about-us/team-fit-form";
 const AboutUsPage = () => {
   return (
     <main className={"pt-32 sm:p-10"}>
-      <section className={"flex flex-col gap-16 p-10 sm:flex-row"}>
+      <section className={"flex flex-col gap-16 p-10 py-32 sm:flex-row"}>
         <div className={"flex w-full flex-col gap-4"}>
           <div className={"h-[3px] w-[12rem] bg-majorelleBlue"} />
           <H1>
