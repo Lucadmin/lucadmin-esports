@@ -119,7 +119,12 @@ const BaetPage = () => {
         experts is ready to help you achieve your goals and build a successful
         esports team.
       </p>
-      <FancyButton className={"mx-auto mt-5 mb-32 w-fit"}>
+      <FancyButton
+        className={"mx-auto mt-5 mb-32 w-fit"}
+        onClick={() => {
+          window.open("mailto:hello@lucadmin.de");
+        }}
+      >
         Get in contact now
       </FancyButton>
     </div>
