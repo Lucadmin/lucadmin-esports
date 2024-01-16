@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Outlined from "@/app/components/typography/outlined";
 import FancyButton from "@/app/components/buttons/FancyButton";
