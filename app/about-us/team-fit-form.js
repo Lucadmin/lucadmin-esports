@@ -63,18 +63,18 @@ const TeamFitForm = () => {
                 });
               }}
             >
-              <Checkbox id={"atLeast16"} labelText={"at least 16 years old"} />
+              <Checkbox id={"atLeast16"} labelText={"at least 18 years old"} />
               <Checkbox
                 id={"available"}
                 labelText={"available for regular training"}
               />
               <Checkbox
                 id={"immortal"}
-                labelText={"or was Immortal or higher"}
+                labelText={"my peak rank is immortal 3 or higher"}
               />
               <Checkbox
                 id={"experience"}
-                labelText={"ready for a team or already have been in a team"}
+                labelText={"already have been in a team"}
               />
             </fieldset>
           </div>
